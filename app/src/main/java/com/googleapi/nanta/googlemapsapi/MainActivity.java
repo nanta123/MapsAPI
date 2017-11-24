@@ -180,3 +180,48 @@ public class MainActivity extends AppCompatActivity {
             m_map.animateCamera(CameraUpdateFactory.newCameraPosition(target), 10000, null);
         }
     })
+
+    public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+
+        static final CameraPosition INDONESIA = CameraPosition.builder()
+                .target(new LatLng(-6.967854, 107.583750))
+                .zoom(15)
+                .bearing(0)
+                .tilt(45)
+                .build();
+        GoogleMap m_map;
+        boolean mapReady = false;
+        LatLng IND = new LatLng(-6.967854, 107.583750);
+        MarkerOptions Indonesia;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+            Indonesia = new MarkerOptions()
+                    .position(new LatLng(-6.967854, 107.583750))
+                    .title("Perumahan")
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+
+            MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+        }
+
+        private void flyTo(CameraPosition target) {
+            m_map.animateCamera(CameraUpdateFactory.newCameraPosition(target), 10000, null);
+        }
+
+        @Override
+        public void onMapReady(GoogleMap map) {
+            mapReady = true;
+            m_map = map;
+            map.moveCamera(CameraUpdateFactory.newCameraPosition(INDONESIA));
+            map.addCircle(new CircleOptions()
+                    .center(IND)
+                    .radius(500)
+                    .strokeColor(Color.GREEN)
+                    .fillColor(Color.argb(64, 0, 255, 0)));
+            m_map.addMarker(Indonesia);
+        }
+    }
