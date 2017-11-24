@@ -225,6 +225,17 @@ public class MainActivity extends AppCompatActivity {
             m_map.addMarker(Indonesia);
         }
 
+        @Override
+        public void onStreetViewPanoramaReady(StreetViewPanorama panorama) {
+            panorama.setPosition(new LatLng(-6.921932, 107.607639));
+            panorama.setStreetNamesEnabled(false);
+            StreetViewPanoramaCamera camera = new StreetViewPanoramaCamera.Builder()
+                    .bearing(180)
+                    .build();
+            panorama.animateTo(camera, 10000);
+
+        }
+
         public class MainActivity extends AppCompatActivity implements OnStreetViewPanoramaReadyCallback {
 
             @Override
