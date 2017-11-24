@@ -224,4 +224,26 @@ public class MainActivity extends AppCompatActivity {
                     .fillColor(Color.argb(64, 0, 255, 0)));
             m_map.addMarker(Indonesia);
         }
+
+        public class MainActivity extends AppCompatActivity implements OnStreetViewPanoramaReadyCallback {
+
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_main);
+                StreetViewPanoramaFragment streetViewPanoramaFragment = (StreetViewPanoramaFragment) getFragmentManager().findFragmentById(R.id.streetviewpanorama);
+                streetViewPanoramaFragment.getStreetViewPanoramaAsync(this);
+
+            }
+
+            @Override
+            public void onStreetViewPanoramaReady(StreetViewPanorama panorama) {
+                panorama.setPosition(new LatLng(-6.921932, 107.607639));
+                StreetViewPanoramaCamera camera = new StreetViewPanoramaCamera.Builder()
+                        .bearing(180)
+                        .build();
+                panorama.animateTo(camera, 10000);
+
+            }
+        }
     }
