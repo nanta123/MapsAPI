@@ -15,6 +15,52 @@ public class MainActivity extends AppCompatActivity {
 
          +
 
+    LatLng IND = new LatLng(-6.175392, 106.827178);
+    LatLng FRC = new LatLng(48.858270, 2.294509);
+    LatLng USA = new LatLng(38.897678, -77.036477);
+    LatLng AUS = new LatLng(-33.856820, 151.215279);
+
+    MarkerOptions()
+
+    m_map.addMarker(ina)
+            m_map.addMarker(aust)
+
+    France =new
+
+    position(new LatLng(48.858270, 2.294509)
+ .
+
+    title("Eiffel Tower"))
+            .
+
+    icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)
+ .
+
+    MarkerOptions())
+
+    UnitedState =new
+
+    position(new LatLng(38.897678, -77.036477)
+ .
+
+    title("The White House"))
+            .
+
+    icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)
+ .
+
+    MarkerOptions())
+
+    Australia =new
+
+    position(new LatLng(-33.856820, 151.215279)
+ .
+
+    title("Sydney Opera House"))
+            .
+
+    icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)
+ .
     public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
         static final CameraPosition NEWYORK = CameraPosition.builder()
@@ -133,7 +179,4 @@ public class MainActivity extends AppCompatActivity {
         private void flyTo(CameraPosition target) {
             m_map.animateCamera(CameraUpdateFactory.newCameraPosition(target), 10000, null);
         }
-    }
-
-    m_map.addMarker(ina)
-            m_map.addMarker(aust)
+    })
