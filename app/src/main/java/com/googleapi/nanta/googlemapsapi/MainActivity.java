@@ -37,21 +37,32 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         static final CameraPosition TOKYO = CameraPosition.builder()
                 +            .
-        GoogleMap m_map;)
+        static final CameraPosition TOKYO = CameraPosition.builder()
+                .target(new LatLng(35.6895, 139.6917))
+                .zoom(17)
+                .bearing(90)
+                .tilt(45)
+                .build();)
                 +.
+        final CameraPosition DUBLIN = CameraPosition.builder()
+                .target(new LatLng(53.3478, -6.2597))
+                .zoom(17)
+                .bearing(90)
+                .tilt(45)
+                .build();
+             .
+        GoogleMap m_map;
+             .
         boolean mapReady = false;
              .
 
         target(new LatLng(35.6895, 139.6917)
-             .
 
         zoom(17)
-             .
 
         bearing(90)
 
-        tilt(45)
-
+        tatic tilt(45)
         build();
 
         @Override
