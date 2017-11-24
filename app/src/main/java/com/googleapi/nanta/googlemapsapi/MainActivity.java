@@ -62,9 +62,29 @@ public class MainActivity extends AppCompatActivity {
 
         bearing(90)
 
-        tatic tilt(45)
         build();
 
+        MarkerOptions()
+
+        position(new LatLng(-33.856820, 151.215279)
+
+
+        title("Sydney Opera House")
+
+        ina =new
+
+        MarkerOptions()
+                .
+
+        position(new LatLng(-6.175392, 106.827178))
+                .
+
+        title("Monumen Nasional")
+
+        aust =new
+
+        tatic tilt(45)
+                .
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -100,9 +120,8 @@ public class MainActivity extends AppCompatActivity {
                     MapFragment
             mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
             mapFragment.getMapAsync(this);
-        }
-
-
+        })
+                .
         @Override
         public void onMapReady(GoogleMap map) {
             mapReady = true;
@@ -115,3 +134,6 @@ public class MainActivity extends AppCompatActivity {
             m_map.animateCamera(CameraUpdateFactory.newCameraPosition(target), 10000, null);
         }
     }
+
+    m_map.addMarker(ina)
+            m_map.addMarker(aust)
